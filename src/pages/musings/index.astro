@@ -10,7 +10,7 @@ const musings: CollectionEntry<'musings'>[] = await getCollection('musings');
   <ul>
     {musings.map((musing) => (
       <li>
-        <a href={`/musings/${musing.slug}/`}>{musing.data.title}</a>
+        <a href={`/website/musings/${musing.slug}/`}>{musing.data.title}</a>
         <time datetime={musing.data.date.toISOString()}>
           {musing.data.date.toLocaleDateString()}
         </time>
