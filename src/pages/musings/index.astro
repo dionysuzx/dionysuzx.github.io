@@ -1,0 +1,20 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+
+const musings: CollectionEntry<'musings'>[] = await getCollection('musings');
+---
+<BaseLayout>
+  <h2>Musings</h2>
+  <ul>
+    {musings.map((musing) => (
+      <li>
+        <a href={`/musings/${musing.slug}/`}>{musing.data.title}</a>
+        <time datetime={musing.data.date.toISOString()}>
+          {musing.data.date.toLocaleDateString()}
+        </time>
+      </li>
+    ))}
+  </ul>
+</BaseLayout>
