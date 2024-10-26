@@ -5,6 +5,7 @@ const musingCollection = defineCollection({
   schema: z.object({
     title: z.string(),
     date: z.date(),
+    draft: z.boolean().default(false),
   }),
 });
 
