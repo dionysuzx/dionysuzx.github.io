@@ -1,18 +1,18 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import { getCollection } from 'astro:content';
-import type { CollectionEntry } from 'astro:content';
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
 
 export async function getStaticPaths() {
-  const musings = await getCollection('musings');
-  return musings.map((musing: CollectionEntry<'musings'>) => ({
+  const musings = await getCollection("musings");
+  return musings.map((musing: CollectionEntry<"musings">) => ({
     params: { slug: musing.slug },
     props: { musing },
   }));
 }
 
 interface Props {
-  musing: CollectionEntry<'musings'>;
+  musing: CollectionEntry<"musings">;
 }
 
 const { musing } = Astro.props;

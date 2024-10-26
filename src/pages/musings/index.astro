@@ -1,9 +1,9 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import { getCollection } from 'astro:content';
-import type { CollectionEntry } from 'astro:content';
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
 
-const musings: CollectionEntry<'musings'>[] = await getCollection('musings');
+const musings: CollectionEntry<"musings">[] = await getCollection("musings");
 ---
 <BaseLayout>
   <h2>Musings</h2>
